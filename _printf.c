@@ -5,7 +5,7 @@
  * @format: The format string that contains the text to be written to stdout.
  *          It may contain embedded format specifiers that are replaced by
  *          the values specified in subsequest additional arguments.
- * 
+ *
  * Return: Numbers of characters printed (excluding the NULL byte at the end of the string
  * or -1 if there is an error.
  */
