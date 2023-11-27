@@ -1,7 +1,7 @@
              Custom Library Functions Manual              
 
 NAME
-        _printf - Custom printf function for formatted output
+         _printf - Custom printf function for formatted output
 
 SYNOPSIS
        #include "main.h"
@@ -12,9 +12,9 @@ DESCRIPTION
        The _printf function produces output according to a format. It writes
        output to stdout, the standard output stream.
 
-       This function is a custom implementation of printf with a limited set
+       This function is a custom implementation of printf with an extended set
        of specifiers. It supports various formatting options for printing
-       characters, strings, integers, and numbers in different bases.
+       characters, strings, integers, numbers in different bases, and more.
 
        Supported specifiers:
        c - Prints a character.
@@ -26,6 +26,9 @@ DESCRIPTION
        R - Encodes and prints a string using ROT13.
        u - Prints an unsigned integer.
        o - Prints a number in octal format.
+       b - Prints a number in binary format.
+       X - Prints a number in uppercase hexadecimal format.
+       x - Prints a number in lowercase hexadecimal format.
 
 RETURN VALUE
        On success, the total number of characters written is returned. On
@@ -41,12 +44,12 @@ EXAMPLES
        _printf("ROT13: %R\n", "Hello");
        _printf("Unsigned: %u\n", 12345);
        _printf("Octal: %o\n", 12345);
+       _printf("Binary: %b\n", 5);
+       _printf("Hexadecimal (uppercase): %X\n", 255);
+       _printf("Hexadecimal (lowercase): %x\n", 255);
 
 SEE ALSO
-       printf(3)
-
-BUGS
-       No known bugs.
+       printf
 
 AUTHOR
        [Dilan Soto & Javier Marrero]
