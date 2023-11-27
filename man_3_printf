@@ -1,7 +1,7 @@
              Custom Library Functions Manual              
 
 NAME
-       _printf - Custom printf function for formatted output
+        _printf - Custom printf function for formatted output
 
 SYNOPSIS
        #include "main.h"
@@ -12,14 +12,9 @@ DESCRIPTION
        The _printf function produces output according to a format. It writes
        output to stdout, the standard output stream.
 
-       The function is similar to the standard printf function but is a custom
-       implementation with a limited set of specifiers.
-
-       The format string is a character string, beginning and ending in its
-       initial shift state, if any. The format string is composed of zero or
-       more directives: ordinary characters (not %), which are copied
-       unchanged to the output stream; and conversion specifications, each of
-       which results in fetching zero or more subsequent arguments.
+       This function is a custom implementation of printf with a limited set
+       of specifiers. It supports various formatting options for printing
+       characters, strings, integers, and numbers in different bases.
 
        Supported specifiers:
        c - Prints a character.
@@ -27,6 +22,10 @@ DESCRIPTION
        % - Prints a percent sign.
        d - Prints a signed decimal integer.
        i - Prints an integer in base 10.
+       r - Prints a string in reverse.
+       R - Encodes and prints a string using ROT13.
+       u - Prints an unsigned integer.
+       o - Prints a number in octal format.
 
 RETURN VALUE
        On success, the total number of characters written is returned. On
@@ -38,6 +37,10 @@ EXAMPLES
        _printf("Percent: %%\n");
        _printf("Integer: %d\n", 100);
        _printf("Integer: %i\n", 100);
+       _printf("Reverse: %r\n", "Hello");
+       _printf("ROT13: %R\n", "Hello");
+       _printf("Unsigned: %u\n", 12345);
+       _printf("Octal: %o\n", 12345);
 
 SEE ALSO
        printf(3)
