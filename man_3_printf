@@ -1,0 +1,51 @@
+             Custom Library Functions Manual              
+
+NAME
+       _printf - Custom printf function for formatted output
+
+SYNOPSIS
+       #include "main.h"
+
+       int _printf(const char *format, ...);
+
+DESCRIPTION
+       The _printf function produces output according to a format. It writes
+       output to stdout, the standard output stream.
+
+       The function is similar to the standard printf function but is a custom
+       implementation with a limited set of specifiers.
+
+       The format string is a character string, beginning and ending in its
+       initial shift state, if any. The format string is composed of zero or
+       more directives: ordinary characters (not %), which are copied
+       unchanged to the output stream; and conversion specifications, each of
+       which results in fetching zero or more subsequent arguments.
+
+       Supported specifiers:
+       c - Prints a character.
+       s - Prints a string.
+       % - Prints a percent sign.
+       d - Prints a signed decimal integer.
+       i - Prints an integer in base 10.
+
+RETURN VALUE
+       On success, the total number of characters written is returned. On
+       failure, a negative number is returned.
+
+EXAMPLES
+       _printf("Character: %c\n", 'A');
+       _printf("String: %s\n", "Hello, World");
+       _printf("Percent: %%\n");
+       _printf("Integer: %d\n", 100);
+       _printf("Integer: %i\n", 100);
+
+SEE ALSO
+       printf(3)
+
+BUGS
+       No known bugs.
+
+AUTHOR
+       [Dilan Soto & Javier Marrero]
+
+Custom Project                     [November 26, 2023]                         
