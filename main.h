@@ -1,26 +1,32 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdarg.h>
+#ifndef NULL
+#define NULL ((void *)0)
+#endif
 
-int print_character(va_list arg);
-int print_string(va_list arg);
-int print_percent(va_list arg);
-int _printf(const char *format, ...);
-int print_integers(va_list arg);
-int default_case(const char *format);
+#include <limits.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <stdio.h>
 
 /**
- *struct printf - struct for printf
- * @print: function pointer
- * @charType: specifier
-*/
+ * struct print_type - A structure mapping a format specifier to its handling function.
+ * @specifier: The format specifier (e.g., "c", "s", "%").
+ * @f: Pointer to the function that handles the specifier.
+ */
+typedef struct print_type {
+    char *specifier;
+    int (*f)(va_list);
+} print_type;
 
-typedef struct printf
-{
-char *charType;
-int (*print)(va_list arg);
-} printf_t;
+int _putchar(char c);
+int _strlen(char *s);
+int _printf(const char *format, ...);
+int print_char(va_list ap);
+int print_string(va_list ap);
+int print_percent(va_list ap);
+int print_int(va_list ap);
 
 
 #endif
