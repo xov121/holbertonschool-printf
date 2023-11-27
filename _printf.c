@@ -31,7 +31,7 @@ char_count += _putchar(format[i]);
 continue;
 }
 for (j = 0; argument[j].specifier; j++) {
-f (format[i + 1] == '\0') {
+if (format[i + 1] == '\0') {
 char_count += _putchar('%');
 break;
 }
