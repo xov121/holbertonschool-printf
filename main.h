@@ -5,10 +5,21 @@
 #define NULL ((void *)0)
 #endif //NULL
 
-#include <limits.h> // For INT_MIN macro in print_int
-#include <stdarg.h> // For va
-#include <unistd.h> // For write
-#include <stdio.h> // For printf
+#include <limits.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include <stdio.h>
+
+/**
+ * struct print_type - A structure mapping a format specifier to its handling function.
+ * @specifier: The format specifier (e.g., "c", "s", "%").
+ * @f: Pointer to the function that handles the specifier.
+ */
+typedef struct print_type {
+    char *specifier;
+    int (*f)(va_list);
+} print_type;
+
 
 int _putchar(char c);
 int _strlen(char *s);
