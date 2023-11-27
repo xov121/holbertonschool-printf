@@ -16,8 +16,8 @@
  * @f: Pointer to the function that handles the specifier.
  */
 typedef struct print_type {
-    char *specifier;
-    int (*f)(va_list);
+char *specifier;
+int (*f)(va_list);
 } print_type;
 
 int _putchar(char c);
@@ -27,6 +27,5 @@ int print_char(va_list ap);
 int print_string(va_list ap);
 int print_percent(va_list ap);
 int print_int(va_list ap);
-
 
 #endif
