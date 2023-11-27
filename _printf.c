@@ -32,16 +32,27 @@ int _printf(const char *format, ...){
             char_count += _putchar(format[i]);
             continue;
         }
+<<<<<<< HEAD
         for (j = 0; argument[j].parameter; j++){
             if (*argument[j].parameter == format [i + 1]){
+=======
+        for (j = 0; argument[j].specifier; j++){
+            if (*argument[j].specifier == format [i + 1]){
+>>>>>>> Javier
                 char_count += argument[j].f(ap);
                 break;
             }
         }
         i++;
+<<<<<<< HEAD
         if (!argument[j].parameter){
             char_count += _putchar('%');
             char_count += _putchar(format[i + 1], 1);
+=======
+        if (!argument[j].specifier){
+            char_count += _putchar('%');
+            char_count += _putchar(format[i + 1]);
+>>>>>>> Javier
         }
     }
     va_end(ap);

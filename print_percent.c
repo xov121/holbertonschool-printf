@@ -6,7 +6,8 @@
  * 
  * Return: Number of characters printed, 1 for success.
  */
-int print_percent(va_list ap){
-    (void)ap;
-    return (_putchar('%'));
+int print_percent(va_list ap)
+{
+(void)ap;
+return (_putchar('%'));
 }
