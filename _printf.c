@@ -26,25 +26,32 @@ int _printf(const char *format, ...){
     if (!format || (format[0] == '%' && !format[1]))
      return (-1);
 
-    for (i = 0; format && format[i]; i++){
-        if (format[i] != '%'){
-            char_count += _putchar(format[i]);
-            continue;
-        }
-        for (j = 0; argument[j].specifier; j++){
-            if (*argument[j].specifier == format [i + 1]){
-                char_count += argument[j].f(ap);
-                break;
-            }
-        }
-        i++;
+    for (i = 0; format && format[i]; i++) {
+    if (format[i] != '%') {
+        char_count += _putchar(format[i]);
+        continue;
+    }
 
-        if (!argument[j].specifier){
+    for (j = 0; argument[j].specifier; j++) {
+        if (format[i + 1] == '\0') {
             char_count += _putchar('%');
-            char_count += _putchar(format[i + 1]);
+            break;
+        }
 
+        if (*argument[j].specifier == format[i + 1]) {
+            char_count += argument[j].f(ap);
+            i++;
+            break;
         }
     }
+
+    if (!argument[j].specifier && format[i + 1] != '\0') {
+        char_count += _putchar('%');
+        char_count += _putchar(format[i + 1]);
+        i++;
+    }
+}
+
     va_end(ap);
     return (char_count);
 }
