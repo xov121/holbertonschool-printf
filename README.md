@@ -1,6 +1,3 @@
-<img width="1420" alt="Captura de pantalla 2023-11-26 a la(s) 4 00 10 p  m" src="https://github.com/xov121/holbertonschool-printf/assets/144055652/b99a4577-83ea-4fd6-b038-a9b68daf3db3">
-
-
 _printf() Function Repository
 
 Hello! Here we present the repository that contains all the necessary code for our custom function named `_printf()`. We are Dilan Soto and Javier Marrero, and we have developed a mini-version of the `printf()` function from the C language, found in `stdio.h`. Our `_printf()` function attempts to replicate the same process as the C `printf()` function. This project was carried out as part of a curriculum project of a Holberton School software development program. We hope you find it useful and interesting!
